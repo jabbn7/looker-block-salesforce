@@ -1,34 +1,34 @@
 view: opportunity {
-  sql_table_name: @{SALESFORCE_SCHEMA}.opportunity ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_Opportunity ;;
 
   dimension: id {
     primary_key: yes
     type: string
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     hidden: yes
   }
 
   dimension: type {
     type: string
-    sql: ${TABLE}.type ;;
+    sql: ${TABLE}.Type ;;
   }
 
   dimension: account_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.account_id ;;
+    sql: ${TABLE}.AccountId ;;
   }
 
   dimension: amount {
     type: number
-    sql: ${TABLE}.amount ;;
+    sql: ${TABLE}.Amount ;;
     hidden: yes
   }
 
   dimension: campaign_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.campaign_id ;;
+    sql: ${TABLE}.CampaignId ;;
   }
 
   dimension_group: close {
@@ -46,12 +46,12 @@ view: opportunity {
       fiscal_quarter_of_year,
       fiscal_year
     ]
-    sql: ${TABLE}.close_date ;;
+    sql: ${TABLE}.CloseDate ;;
   }
 
   dimension: created_by_id {
     type: string
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
     hidden: yes
   }
 
@@ -70,85 +70,85 @@ view: opportunity {
       fiscal_quarter_of_year,
       fiscal_year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
   dimension: description {
     type: string
-    sql: ${TABLE}.description ;;
+    sql: ${TABLE}.Description ;;
   }
 
   dimension: expected_revenue {
     type: number
-    sql: ${TABLE}.expected_revenue ;;
+    sql: ${TABLE}.ExpectedRevenue ;;
     hidden: yes
   }
 
   dimension: fiscal {
     type: string
     hidden: yes
-    sql: ${TABLE}.fiscal ;;
+    sql: ${TABLE}.Fiscal ;;
   }
 
   dimension: fiscal_quarter {
     type: number
-    sql: ${TABLE}.fiscal_quarter ;;
+    sql: ${TABLE}.FiscalQuarter ;;
   }
 
   dimension: fiscal_year {
     type: number
-    sql: ${TABLE}.fiscal_year ;;
+    sql: ${TABLE}.FiscalYear ;;
   }
 
   dimension: forecast_category {
     type: string
-    sql: ${TABLE}.forecast_category ;;
+    sql: ${TABLE}.ForecastCategory ;;
   }
 
   dimension: forecast_category_name {
     type: string
-    sql: ${TABLE}.forecast_category_name ;;
+    sql: ${TABLE}.ForecastCategoryName ;;
   }
 
   dimension: has_open_activity {
     type: yesno
-    sql: ${TABLE}.has_open_activity ;;
+    sql: ${TABLE}.HasOpenActivity ;;
     group_label: "Status"
   }
 
   dimension: has_opportunity_line_item {
     type: yesno
-    sql: ${TABLE}.has_opportunity_line_item ;;
+    sql: ${TABLE}.HasOpportunityLineItem ;;
     group_label: "Status"
   }
 
   dimension: has_overdue_task {
     type: yesno
-    sql: ${TABLE}.has_overdue_task ;;
+    sql: ${TABLE}.HasOverdueTask ;;
     group_label: "Status"
   }
 
   dimension: is_closed {
     type: yesno
-    sql: ${TABLE}.is_closed ;;
+    sql: ${TABLE}.IsClosed ;;
     group_label: "Status"
   }
 
   dimension: is_deleted {
     type: yesno
-    sql: ${TABLE}.is_deleted ;;
+    sql: ${TABLE}.IsDeleted ;;
     group_label: "Status"
   }
 
   dimension: is_private {
     type: yesno
-    sql: ${TABLE}.is_private ;;
+    sql: ${TABLE}.IsPrivate ;;
     hidden: yes
   }
 
   dimension: is_won {
     type: yesno
-    sql: ${TABLE}.is_won ;;
+    sql: ${TABLE}.IsWon ;;
     group_label: "Status"
   }
 
@@ -164,12 +164,12 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_activity_date ;;
+    sql: ${TABLE}.LastActivityDate ;;
   }
 
   dimension: last_modified_by_id {
     type: string
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
     hidden: yes
   }
 
@@ -185,7 +185,7 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension_group: last_referenced {
@@ -199,7 +199,7 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_referenced_date ;;
+    sql: ${TABLE}.LastReferencedDate ;;
     hidden: yes
   }
 
@@ -215,18 +215,18 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_viewed_date ;;
+    sql: ${TABLE}.LastViewedDate ;;
   }
 
   dimension: lead_source {
     type: string
-    sql: ${TABLE}.lead_source ;;
+    sql: ${TABLE}.LeadSource ;;
   }
 
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.Name ;;
     link: {
       url:"http://@{SALESFORCE_DOMAIN}/{{ opportunity.id._value }}"
       label: "View in Salesforce"
@@ -235,24 +235,24 @@ view: opportunity {
 
   dimension: next_step {
     type: string
-    sql: ${TABLE}.next_step ;;
+    sql: ${TABLE}.NextStep ;;
   }
 
   dimension: owner_id {
     type: string
-    sql: ${TABLE}.owner_id ;;
+    sql: ${TABLE}.OwnerId ;;
     hidden: yes
   }
 
   dimension: pricebook_2_id {
     type: string
-    sql: ${TABLE}.pricebook_2_id ;;
+    sql: ${TABLE}.Pricebook2Id ;;
     hidden: yes
   }
 
   dimension: probability {
     type: number
-    sql: ${TABLE}.probability ;;
+    sql: ${TABLE}.Probability ;;
     hidden: yes
   }
 
@@ -263,7 +263,7 @@ view: opportunity {
 
   dimension: stage_name {
     type: string
-    sql: ${TABLE}.stage_name ;;
+    sql: ${TABLE}.StageName ;;
   }
 
   dimension: probability_group {
@@ -304,28 +304,28 @@ view: opportunity {
     type: string
     case: {
       when: {
-        label: "$0 - $10K"
-        sql: ${amount} < 10000 ;;
+        label: "$0 - $5K"
+        sql: ${amount} <= 5000 ;;
       }
       when: {
-        label: "$10K - $50K"
-        sql: ${amount} < 50000;;
+        label: "$5K - $10K"
+        sql: ${amount} <= 10000;;
       }
       when: {
-        label: "$50K - $100K"
-        sql: ${amount} < 100000 ;;
+        label: "$10K - $15K"
+        sql: ${amount} <= 15000 ;;
       }
       when: {
-        label: "$100K - $500K"
-        sql: ${amount} < 500000 ;;
+        label: "$15K - $20K"
+        sql: ${amount} <= 20000 ;;
       }
       when: {
-        label: "$500K - $1M"
-        sql: ${amount} < 1000000 ;;
+        label: "$2OK - $25M"
+        sql: ${amount} <= 25000 ;;
       }
       when: {
-        label: "Over $1M"
-        sql: ${amount} > 1000000 ;;
+        label: "Over $25K"
+        sql: ${amount} > 25000 ;;
       }
       else: "Amount Unspecified"
     }
@@ -336,17 +336,17 @@ view: opportunity {
     type: number
     hidden: yes
     sql: CASE
-         WHEN ${amount} < 10000
+         WHEN ${amount} <= 5000
          THEN 1
-         WHEN ${amount} < 50000
+         WHEN ${amount} <= 10000
          THEN 2
-         WHEN ${amount} < 100000
+         WHEN ${amount} <= 15000
          THEN 3
-        WHEN  ${amount} < 500000
+        WHEN  ${amount} <= 20000
          THEN 4
-         WHEN ${amount} < 1000000
+         WHEN ${amount} <= 25000
          THEN 5
-         WHEN ${amount} > 1000000
+         WHEN ${amount} > 25000
          THEN 6
         ELSE
           7
@@ -354,7 +354,7 @@ view: opportunity {
   }
 
   dimension: id_url {
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     html: [<a href="https://{{ salesforce_domain_config._sql }}/{{ value }}">Open in SFDC</a>] ;;
     hidden: yes
   }
@@ -392,17 +392,17 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}.system_modstamp ;;
+    sql: ${TABLE}.SystemModstamp ;;
     hidden: yes
   }
 
   dimension: total_opportunity_quantity {
     type: number
-    sql: ${TABLE}.total_opportunity_quantity ;;
+    sql: ${TABLE}.TotalOpportunityQuantity ;;
     hidden: yes
   }
 
-  dimension_group: _fivetran_synced {
+  dimension_group: _attrib_synced {
     type: time
     timeframes: [
       raw,
@@ -413,7 +413,7 @@ view: opportunity {
       quarter,
       year
     ]
-    sql: ${TABLE}._fivetran_synced ;;
+    sql: ${TABLE}._attrib_synced ;;
     hidden: yes
   }
 

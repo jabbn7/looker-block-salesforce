@@ -1,5 +1,4 @@
 # Salesforce Looker Block
-
 This repository contains views, explores and dashboards that make up the Sales Block.
 
 ## Dashboards

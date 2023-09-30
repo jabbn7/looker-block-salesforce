@@ -1,9 +1,9 @@
 view: user {
-  sql_table_name: @{SALESFORCE_SCHEMA}.user ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_User ;;
   dimension: id {
     primary_key: yes
     type: string
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     hidden: yes
   }
 
@@ -27,73 +27,73 @@ view: user {
   #### How longh does it take an AE to ramp #### default
   dimension: about_me {
     type: string
-    sql: ${TABLE}.about_me ;;
+    sql: ${TABLE}.AboutMe ;;
     hidden: yes
   }
 
   dimension: account_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.account_id ;;
+    sql: ${TABLE}.AccountId ;;
   }
 
   dimension: alias {
     type: string
-    sql: ${TABLE}.alias ;;
+    sql: ${TABLE}.Alias ;;
     hidden: yes
   }
   dimension: badge_text {
     type: string
-    sql: ${TABLE}.badge_text ;;
+    sql: ${TABLE}.BadgeText ;;
     hidden: yes
   }
 
   dimension: banner_photo_url {
     type: string
-    sql: ${TABLE}.banner_photo_url ;;
+    sql: ${TABLE}.BannerPhotoUrl ;;
     hidden: yes
   }
 
   dimension: call_center_id {
     type: string
-    sql: ${TABLE}.call_center_id ;;
+    sql: ${TABLE}.CallCenterId ;;
     hidden: yes
   }
 
   dimension: city {
     type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}.City ;;
     hidden: yes
   }
 
   dimension: community_nickname {
     type: string
-    sql: ${TABLE}.community_nickname ;;
+    sql: ${TABLE}.CommunityNickname ;;
     hidden: yes
   }
 
   dimension: company_name {
     type: string
-    sql: ${TABLE}.company_name ;;
+    sql: ${TABLE}.CompanyName ;;
   }
 
   dimension: contact_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.contact_id ;;
+    sql: ${TABLE}.ContactId ;;
   }
 
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}.Country ;;
     hidden: yes
   }
 
   dimension: created_by_id {
     hidden: yes
     type: string
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
   }
 
   dimension_group: created {
@@ -107,133 +107,133 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
   dimension: default_group_notification_frequency {
     type: string
-    sql: ${TABLE}.default_group_notification_frequency ;;
+    sql: ${TABLE}.DefaultGroupNotificationFrequency ;;
     hidden: yes
   }
 
   dimension: delegated_approver_id {
     hidden: yes
     type: string
-    sql: ${TABLE}.delegated_approver_id ;;
+    sql: ${TABLE}.DelegatedApproverId ;;
   }
 
   dimension: department {
     type: string
-    sql: ${TABLE}.department ;;
+    sql: ${TABLE}.Department ;;
   }
 
   dimension: digest_frequency {
     type: string
-    sql: ${TABLE}.digest_frequency ;;
+    sql: ${TABLE}.DigestFrequency ;;
     hidden: yes
   }
 
   dimension: division {
     type: string
-    sql: ${TABLE}.division ;;
+    sql: ${TABLE}.Division ;;
   }
 
   dimension: email {
     type: string
-    sql: ${TABLE}.email ;;
+    sql: ${TABLE}.Email ;;
   }
 
   dimension: email_encoding_key {
     type: string
-    sql: ${TABLE}.email_encoding_key ;;
+    sql: ${TABLE}.EmailEncodingKey ;;
     hidden: yes
   }
 
   dimension: email_preferences_auto_bcc {
     type: yesno
-    sql: ${TABLE}.email_preferences_auto_bcc ;;
+    sql: ${TABLE}.EmailPreferencesAutoBcc ;;
     hidden: yes
   }
 
   dimension: email_preferences_auto_bcc_stay_in_touch {
     type: yesno
-    sql: ${TABLE}.email_preferences_auto_bcc_stay_in_touch ;;
+    sql: ${TABLE}.EmailPreferencesAutoBccStayInTouch ;;
     hidden: yes
   }
 
   dimension: email_preferences_stay_in_touch_reminder {
     type: yesno
-    sql: ${TABLE}.email_preferences_stay_in_touch_reminder ;;
+    sql: ${TABLE}.EmailPreferencesStayInTouchReminder ;;
     hidden: yes
   }
 
   dimension: employee_number {
     type: string
-    sql: ${TABLE}.employee_number ;;
+    sql: ${TABLE}.EmployeeNumber ;;
     hidden: yes
   }
 
   dimension: extension {
     type: string
-    sql: ${TABLE}.extension ;;
+    sql: ${TABLE}.Extension ;;
     hidden: yes
   }
 
   dimension: fax {
     type: string
-    sql: ${TABLE}.fax ;;
+    sql: ${TABLE}.Fax ;;
     hidden: yes
   }
 
   dimension: federation_identifier {
     type: string
-    sql: ${TABLE}.federation_identifier ;;
+    sql: ${TABLE}.FederationIdentifier ;;
     hidden: yes
   }
 
   dimension: first_name {
     type: string
-    sql: ${TABLE}.first_name ;;
+    sql: ${TABLE}.FirstName ;;
   }
 
   dimension: forecast_enabled {
     type: yesno
-    sql: ${TABLE}.forecast_enabled ;;
+    sql: ${TABLE}.ForecastEnabled ;;
     hidden: yes
   }
 
   dimension: full_photo_url {
     type: string
-    sql: ${TABLE}.full_photo_url ;;
+    sql: ${TABLE}.FullPhotoUrl ;;
     hidden: yes
   }
 
   dimension: geocode_accuracy {
     type: string
-    sql: ${TABLE}.geocode_accuracy ;;
+    sql: ${TABLE}.GeocodeAccuracy ;;
     hidden: yes
   }
 
   dimension: is_active {
     type: yesno
-    sql: ${TABLE}.is_active ;;
+    sql: ${TABLE}.IsActive ;;
   }
 
   dimension: is_profile_photo_active {
     type: yesno
-    sql: ${TABLE}.is_profile_photo_active ;;
+    sql: ${TABLE}.IsProfilePhotoActive ;;
     hidden: yes
   }
 
   dimension: jigsaw_import_limit_override {
     type: number
-    sql: ${TABLE}.jigsaw_import_limit_override ;;
+    sql: ${TABLE}.JigsawImportLimitOverride ;;
     hidden: yes
   }
 
   dimension: language_locale_key {
     type: string
-    sql: ${TABLE}.language_locale_key ;;
+    sql: ${TABLE}.LanguageLocaleKey ;;
     hidden: yes
   }
 
@@ -248,13 +248,13 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_login_date ;;
+    sql: ${TABLE}.LastLoginDate ;;
     hidden: yes
   }
 
   dimension: last_modified_by_id {
     type: string
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
     hidden: yes
   }
 
@@ -270,12 +270,12 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension: last_name {
     type: string
-    sql: ${TABLE}.last_name ;;
+    sql: ${TABLE}.LastName ;;
   }
 
   dimension_group: last_password_change {
@@ -289,7 +289,7 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_password_change_date ;;
+    sql: ${TABLE}.LastPasswordChangeDate ;;
     hidden: yes
   }
 
@@ -304,7 +304,7 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_referenced_date ;;
+    sql: ${TABLE}.LastReferencedDate ;;
     hidden: yes
   }
 
@@ -319,43 +319,43 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_viewed_date ;;
+    sql: ${TABLE}.LastViewedDate ;;
     hidden: yes
   }
 
   dimension: latitude {
     type: number
-    sql: ${TABLE}.latitude ;;
+    sql: ${TABLE}.Latitude ;;
     hidden: yes
   }
 
   dimension: locale_sid_key {
     type: string
-    sql: ${TABLE}.locale_sid_key ;;
+    sql: ${TABLE}.LocaleSidKey ;;
     hidden: yes
   }
 
   dimension: longitude {
     type: number
-    sql: ${TABLE}.longitude ;;
+    sql: ${TABLE}.Longitude ;;
     hidden: yes
   }
 
   dimension: manager_id {
     type: string
-    sql: ${TABLE}.manager_id ;;
+    sql: ${TABLE}.ManagerId ;;
     hidden: yes
   }
 
   dimension: mobile_phone {
     type: string
-    sql: ${TABLE}.mobile_phone ;;
+    sql: ${TABLE}.MobilePhone ;;
     hidden: yes
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.Name ;;
   }
 
   dimension_group: offline_pda_trial_expiration {
@@ -369,7 +369,7 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.offline_pda_trial_expiration_date ;;
+    sql: ${TABLE}.OfflinePdaRrialExpirationDate ;;
     hidden: yes
   }
 
@@ -384,7 +384,7 @@ view: user {
       quarter,
       year
     ]
-    sql: ${TABLE}.offline_trial_expiration_date ;;
+    sql: ${TABLE}.OfflineTrialExpirationDate ;;
     hidden: yes
   }
 
@@ -396,83 +396,83 @@ view: user {
 
   dimension: postal_code {
     type: string
-    sql: ${TABLE}.postal_code ;;
+    sql: ${TABLE}.PostalCode ;;
     hidden: yes
   }
 
   dimension: profile_id {
     type: string
-    sql: ${TABLE}.profile_id ;;
+    sql: ${TABLE}.ProfileId ;;
     hidden: yes
   }
 
   dimension: receives_admin_info_emails {
     type: yesno
-    sql: ${TABLE}.receives_admin_info_emails ;;
+    sql: ${TABLE}.ReceivesAdminInfoEmails ;;
     hidden: yes
   }
 
   dimension: receives_info_emails {
     type: yesno
-    sql: ${TABLE}.receives_info_emails ;;
+    sql: ${TABLE}.ReceivesInfoEmails ;;
     hidden: yes
   }
 
   dimension: sender_email {
     type: string
-    sql: ${TABLE}.sender_email ;;
+    sql: ${TABLE}.SenderEmail ;;
     hidden: yes
   }
 
   dimension: sender_name {
     type: string
-    sql: ${TABLE}.sender_name ;;
+    sql: ${TABLE}.SenderName ;;
     hidden: yes
   }
 
   dimension: signature {
     type: string
-    sql: ${TABLE}.signature ;;
+    sql: ${TABLE}.Signature ;;
     hidden: yes
   }
 
   dimension: small_photo_url {
     type: string
-    sql: ${TABLE}.small_photo_url ;;
+    sql: ${TABLE}.SmallPhotoUrl ;;
     hidden: yes
   }
 
   dimension: state {
     type: string
-    sql: ${TABLE}.state ;;
+    sql: ${TABLE}.State ;;
     hidden: yes
   }
 
   dimension: street {
     type: string
-    sql: ${TABLE}.street ;;
+    sql: ${TABLE}.Street ;;
     hidden: yes
   }
 
   dimension: title {
     type: string
-    sql: ${TABLE}.title ;;
+    sql: ${TABLE}.Title ;;
   }
 
   dimension: user_role_id {
     type: string
-    sql: ${TABLE}.user_role_id ;;
+    sql: ${TABLE}.UserRoleId ;;
     hidden: yes
   }
 
   dimension: user_type {
     type: string
-    sql: ${TABLE}.user_type ;;
+    sql: ${TABLE}.UserType ;;
   }
 
   dimension: username {
     type: string
-    sql: ${TABLE}.username ;;
+    sql: ${TABLE}.Username ;;
     hidden: yes
   }
 
@@ -512,16 +512,16 @@ view: manager_facts {
   derived_table: {
     sql:
       SELECT
-        manager.name  AS manager_name,
-        manager.id as id,
-        COUNT(DISTINCT(opportunity_owner.id)) AS number_of_reps,
-        COALESCE(SUM(CASE WHEN opportunity.is_won  THEN opportunity.amount    ELSE NULL END), 0) / COUNT(DISTINCT(opportunity_owner.id)) as total_won_per_rep,
-        COALESCE(SUM(CASE WHEN (NOT COALESCE(opportunity.is_closed , FALSE)) AND (opportunity.forecast_category IN ('Pipeline','Forecast','BestCase')) THEN opportunity.amount  ELSE NULL END), 0) / COUNT(DISTINCT(opportunity_owner.id)) as pipeline_per_rep,
-        (COUNT(CASE WHEN opportunity.is_won  THEN 1 ELSE NULL END)) / NULLIF((COUNT(CASE WHEN opportunity.is_closed  THEN 1 ELSE NULL END)),0)  AS win_percentage
-      FROM  @{SALESFORCE_SCHEMA}.user  AS manager
-      JOIN @{SALESFORCE_SCHEMA}.user  AS opportunity_owner ON  manager.id = opportunity_owner.manager_id
-      JOIN @{SALESFORCE_SCHEMA}.opportunity  AS opportunity ON opportunity_owner.id = opportunity.owner_id
-      WHERE NOT opportunity.is_deleted
+        manager.Name  AS manager_name,
+        manager.Id as id,
+        COUNT(DISTINCT(opportunity_owner.Id)) AS number_of_reps,
+        COALESCE(SUM(CASE WHEN opportunity.IsWon  THEN opportunity.Amount    ELSE NULL END), 0) / COUNT(DISTINCT(opportunity_owner.Id)) as total_won_per_rep,
+        COALESCE(SUM(CASE WHEN (NOT COALESCE(opportunity.IsClosed , FALSE)) AND (opportunity.ForecastCategory IN ('Pipeline','Forecast','BestCase')) THEN opportunity.Amount  ELSE NULL END), 0) / COUNT(DISTINCT(opportunity_owner.Id)) as pipeline_per_rep,
+        (COUNT(CASE WHEN opportunity.IsWon  THEN 1 ELSE NULL END)) / NULLIF((COUNT(CASE WHEN opportunity.IsClosed  THEN 1 ELSE NULL END)),0)  AS win_percentage
+      FROM  @{SALESFORCE_SCHEMA}.sf_User  AS manager
+      JOIN @{SALESFORCE_SCHEMA}.sf_User  AS opportunity_owner ON  manager.Id = opportunity_owner.manager_Id
+      JOIN @{SALESFORCE_SCHEMA}.sf_Opportunity  AS opportunity ON opportunity_owner.Id = opportunity.owner_Id
+      WHERE NOT opportunity.IsDeleted
       GROUP BY 1,2 ;;
   }
   dimension: id {

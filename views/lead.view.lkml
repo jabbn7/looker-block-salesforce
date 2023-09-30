@@ -1,10 +1,10 @@
 view: lead {
-  sql_table_name: @{SALESFORCE_SCHEMA}.lead ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_Lead ;;
 
   dimension: id {
     primary_key: yes
     type: string
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
   }
 
   dimension_group: as_lead {
@@ -13,7 +13,7 @@ view: lead {
     sql_end: current_timestamp  ;;
   }
 
-  dimension_group: _fivetran_synced {
+  dimension_group: _attrib_synced {
     type: time
     timeframes: [
       raw,
@@ -24,65 +24,65 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}._fivetran_synced ;;
+    sql: ${TABLE}._attrib_synced ;;
     hidden: yes
   }
 
   dimension: annual_revenue {
     type: number
-    sql: ${TABLE}.annual_revenue ;;
+    sql: ${TABLE}.AnnualRevenue ;;
   }
 
   dimension: city {
     type: string
-    sql: ${TABLE}.city ;;
+    sql: ${TABLE}.City ;;
     group_label: "Address"
   }
 
   dimension: latitude {
     type: number
-    sql: ${TABLE}.latitude ;;
+    sql: ${TABLE}.Latitude ;;
     group_label: "Address"
   }
 
   dimension: longitude {
     type: number
-    sql: ${TABLE}.longitude ;;
+    sql: ${TABLE}.Longitude ;;
     group_label: "Address"
   }
 
   dimension: country {
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
+    sql: ${TABLE}.Country ;;
     group_label: "Address"
   }
 
   dimension: clean_status {
     type: string
-    sql: ${TABLE}.clean_status ;;
+    sql: ${TABLE}.CleanStatus ;;
   }
 
   dimension: company {
     type: string
-    sql: ${TABLE}.company ;;
+    sql: ${TABLE}.Company ;;
   }
 
   dimension: company_duns_number {
     type: string
-    sql: ${TABLE}.company_duns_number ;;
+    sql: ${TABLE}.CompanyDunsNumber ;;
     hidden: yes
   }
 
   dimension: converted_account_id {
     type: string
-    sql: ${TABLE}.converted_account_id ;;
+    sql: ${TABLE}.ConvertedAccountId ;;
     hidden: yes
   }
 
   dimension: converted_contact_id {
     type: string
-    sql: ${TABLE}.converted_contact_id ;;
+    sql: ${TABLE}.ConvertedContactId ;;
     hidden: yes
   }
 
@@ -97,19 +97,19 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.converted_date ;;
+    sql: ${TABLE}.ConvertedDate ;;
   }
 
   dimension: converted_opportunity_id {
     type: string
-    sql: ${TABLE}.converted_opportunity_id ;;
+    sql: ${TABLE}.ConvertedOpportunityId ;;
     hidden: yes
   }
 
 
   dimension: created_by_id {
     type: string
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
     hidden: yes
   }
 
@@ -124,28 +124,28 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
-  dimension: current_generators_c {
-    type: string
-    sql: ${TABLE}.current_generators_c ;;
-  }
+  // dimension: current_generators_c {
+  //   type: string
+  //   sql: ${TABLE}.CurrentGenerators_C ;;
+  // }
 
-  dimension: dandb_company_id {
-    type: string
-    sql: ${TABLE}.dandb_company_id ;;
-    hidden: yes
-  }
+  // dimension: dandb_company_id {
+  //   type: string
+  //   sql: ${TABLE}.dandb_company_id ;;
+  //   hidden: yes
+  // }
 
-  dimension: description {
-    type: string
-    sql: ${TABLE}.description ;;
-  }
+  // dimension: description {
+  //   type: string
+  //   sql: ${TABLE}.Description ;;
+  // }
 
   dimension: email {
     type: string
-    sql: ${TABLE}.email ;;
+    sql: ${TABLE}.Email ;;
   }
 
   dimension_group: email_bounced {
@@ -159,61 +159,61 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.email_bounced_date ;;
+    sql: ${TABLE}.EmailBouncedDate ;;
     hidden: yes
   }
 
   dimension: email_bounced_reason {
     type: string
-    sql: ${TABLE}.email_bounced_reason ;;
+    sql: ${TABLE}.EmailBouncedReason ;;
     hidden: yes
   }
 
   dimension: fax {
     type: string
-    sql: ${TABLE}.fax ;;
+    sql: ${TABLE}.Fax ;;
   }
 
   dimension: first_name {
     type: string
-    sql: ${TABLE}.first_name ;;
+    sql: ${TABLE}.FirstName ;;
   }
 
   dimension: geocode_accuracy {
     type: string
-    sql: ${TABLE}.geocode_accuracy ;;
+    sql: ${TABLE}.GeocodeAccuracy ;;
   }
 
   dimension: industry {
     type: string
-    sql: ${TABLE}.industry ;;
+    sql: ${TABLE}.Industry ;;
   }
 
   dimension: is_converted {
     type: yesno
-    sql: ${TABLE}.is_converted ;;
+    sql: ${TABLE}.IsConverted ;;
   }
 
   dimension: is_deleted {
     type: yesno
-    sql: ${TABLE}.is_deleted ;;
+    sql: ${TABLE}.IsDeleted ;;
   }
 
   dimension: is_unread_by_owner {
     type: yesno
-    sql: ${TABLE}.is_unread_by_owner ;;
+    sql: ${TABLE}.IsUnreadByOwner ;;
     hidden: yes
   }
 
   dimension: jigsaw {
     type: string
-    sql: ${TABLE}.jigsaw ;;
+    sql: ${TABLE}.Jigsaw ;;
     hidden: yes
   }
 
   dimension: jigsaw_contact_id {
     type: string
-    sql: ${TABLE}.jigsaw_contact_id ;;
+    sql: ${TABLE}.JigsawContactId ;;
     hidden: yes
   }
 
@@ -228,12 +228,12 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_activity_date ;;
+    sql: ${TABLE}.LastActivityDate ;;
   }
 
   dimension: last_modified_by_id {
     type: string
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
     hidden: yes
   }
 
@@ -248,12 +248,12 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension: last_name {
     type: string
-    sql: ${TABLE}.last_name ;;
+    sql: ${TABLE}.LastName ;;
   }
 
   dimension_group: last_referenced {
@@ -267,7 +267,7 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_referenced_date ;;
+    sql: ${TABLE}.LastReferencedDate ;;
     hidden: yes
   }
 
@@ -282,30 +282,30 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_viewed_date ;;
+    sql: ${TABLE}.LastViewedDate ;;
     hidden: yes
   }
 
   dimension: lead_source {
     type: string
-    sql: ${TABLE}.lead_source ;;
+    sql: ${TABLE}.LeadSource ;;
   }
 
 
   dimension: master_record_id {
     type: string
-    sql: ${TABLE}.master_record_id ;;
+    sql: ${TABLE}.MasterRecordId ;;
     hidden: yes
   }
 
   dimension: mobile_phone {
     type: string
-    sql: ${TABLE}.mobile_phone ;;
+    sql: ${TABLE}.MobilePhone ;;
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.Name ;;
     html: <a href="https://{{ salesforce_domain_config._sql }}/{{ lead.id._value }}" target="_new">
           <img src="https://www.google.com/s2/favicons?domain=www.salesforce.com" height=16 width=16></a>
           {{ linked_value }};;
@@ -313,73 +313,73 @@ view: lead {
 
   dimension: number_of_employees {
     type: number
-    sql: ${TABLE}.number_of_employees ;;
+    sql: ${TABLE}.NumberOfEmployees ;;
   }
 
-  dimension: numberof_locations_c {
-    type: number
-    sql: ${TABLE}.numberof_locations_c ;;
-  }
+  // dimension: numberof_locations_c {
+  //   type: number
+  //   sql: ${TABLE}.NumberofLocations_c ;;
+  // }
 
   dimension: owner_id {
     type: string
-    sql: ${TABLE}.owner_id ;;
+    sql: ${TABLE}.OwnerId ;;
     hidden: yes
   }
 
   dimension: phone {
     type: string
-    sql: ${TABLE}.phone ;;
+    sql: ${TABLE}.Phone ;;
   }
 
   dimension: photo_url {
     type: string
-    sql: ${TABLE}.photo_url ;;
+    sql: ${TABLE}.PhotoUrl ;;
   }
 
   dimension: postal_code {
     type: string
-    sql: ${TABLE}.postal_code ;;
+    sql: ${TABLE}.PostalCode ;;
   }
 
-  dimension: primary_c {
-    type: string
-    sql: ${TABLE}.primary_c ;;
-  }
+  // dimension: primary_c {
+  //   type: string
+  //   sql: ${TABLE}.Primary_c ;;
+  // }
 
-  dimension: product_interest_c {
-    type: string
-    sql: ${TABLE}.product_interest_c ;;
-  }
+  // dimension: product_interest_c {
+  //   type: string
+  //   sql: ${TABLE}.ProductInterest_c ;;
+  // }
 
   dimension: rating {
     type: string
-    sql: ${TABLE}.rating ;;
+    sql: ${TABLE}.Rating ;;
   }
 
   dimension: salutation {
     type: string
-    sql: ${TABLE}.salutation ;;
+    sql: ${TABLE}.Salutation ;;
   }
 
-  dimension: siccode_c {
-    type: string
-    sql: ${TABLE}.sic_code_c ;;
-  }
+  // dimension: siccode_c {
+  //   type: string
+  //   sql: ${TABLE}.SicCode_c ;;
+  // }
 
   dimension: state {
     type: string
-    sql: ${TABLE}.state ;;
+    sql: ${TABLE}.State ;;
   }
 
   dimension: status {
     type: string
-    sql: ${TABLE}.status ;;
+    sql: ${TABLE}.Status ;;
   }
 
   dimension: street {
     type: string
-    sql: ${TABLE}.street ;;
+    sql: ${TABLE}.Street ;;
   }
 
   dimension_group: system_modstamp {
@@ -393,18 +393,18 @@ view: lead {
       quarter,
       year
     ]
-    sql: ${TABLE}.system_modstamp ;;
+    sql: ${TABLE}.SystemModstamp ;;
     hidden: yes
   }
 
   dimension: title {
     type: string
-    sql: ${TABLE}.title ;;
+    sql: ${TABLE}.Title ;;
   }
 
   dimension: website {
     type: string
-    sql: ${TABLE}.website ;;
+    sql: ${TABLE}.Website ;;
   }
 
   dimension: convert_to_contact {
@@ -423,7 +423,7 @@ view: lead {
   }
 
   dimension: id_url {
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     html: [<a href="https://{{ salesforce_domain_config._sql }}/{{ value }}">Open in SFDC</a>]
       ;;
   }

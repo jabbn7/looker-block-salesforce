@@ -1,20 +1,20 @@
 view: contact {
-  sql_table_name: @{SALESFORCE_SCHEMA}.contact ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_Contact ;;
 
   dimension: account_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.account_id ;;
+    sql: ${TABLE}.AccountiId ;;
   }
 
   dimension: assistant_name {
     type: string
-    sql: ${TABLE}.assistant_name ;;
+    sql: ${TABLE}.AssistantName ;;
   }
 
   dimension: assistant_phone {
     type: string
-    sql: ${TABLE}.assistant_phone ;;
+    sql: ${TABLE}.AssistantPhone ;;
   }
 
   dimension_group: birthdate {
@@ -28,17 +28,17 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.birthdate ;;
+    sql: ${TABLE}.Birthdate ;;
   }
 
   dimension: clean_status {
     type: string
-    sql: ${TABLE}.clean_status ;;
+    sql: ${TABLE}.CleanStatus ;;
   }
 
   dimension: created_by_id {
     type: string
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
     hidden: yes
   }
 
@@ -53,22 +53,22 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
   dimension: department {
     type: string
-    sql: ${TABLE}.department ;;
+    sql: ${TABLE}.Department ;;
   }
 
   dimension: description {
     type: string
-    sql: ${TABLE}.description ;;
+    sql: ${TABLE}.Description ;;
   }
 
   dimension: email {
     type: string
-    sql: ${TABLE}.email ;;
+    sql: ${TABLE}.Email ;;
   }
 
   dimension_group: email_bounced {
@@ -83,45 +83,45 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.email_bounced_date ;;
+    sql: ${TABLE}.EmailBouncedDate ;;
   }
 
   dimension: email_bounced_reason {
     type: string
-    sql: ${TABLE}.email_bounced_reason ;;
+    sql: ${TABLE}.EmailBouncedReason ;;
     hidden: yes
   }
 
   dimension: fax {
     type: string
-    sql: ${TABLE}.fax ;;
+    sql: ${TABLE}.Fax ;;
   }
 
   dimension: first_name {
     type: string
-    sql: ${TABLE}.first_name ;;
+    sql: ${TABLE}.FirstName ;;
   }
 
   dimension: home_phone {
     type: string
-    sql: ${TABLE}.home_phone ;;
+    sql: ${TABLE}.HomePhone ;;
   }
 
   dimension: id {
     type: string
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     primary_key: yes
     hidden: yes
   }
 
   dimension: is_deleted {
     type: yesno
-    sql: ${TABLE}.is_deleted ;;
+    sql: ${TABLE}.IsDeleted ;;
   }
 
   dimension: is_email_bounced {
     type: yesno
-    sql: ${TABLE}.is_email_bounced ;;
+    sql: ${TABLE}.IsEmailBounced ;;
     hidden:  yes
   }
 
@@ -136,7 +136,7 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_activity_date ;;
+    sql: ${TABLE}.LastActivityDate ;;
   }
 
   dimension_group: last_curequest {
@@ -151,7 +151,7 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_curequest_date ;;
+    sql: ${TABLE}.LastCurequestDate ;;
   }
 
   dimension_group: last_cuupdate {
@@ -166,12 +166,12 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_cuupdate_date ;;
+    sql: ${TABLE}.LastCUUpdateDate ;;
   }
 
   dimension: last_modified_by_id {
     type: string
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
   }
 
   dimension_group: last_modified {
@@ -185,12 +185,12 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension: last_name {
     type: string
-    sql: ${TABLE}.last_name ;;
+    sql: ${TABLE}.LastName ;;
   }
 
   dimension_group: last_referenced {
@@ -205,7 +205,7 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_referenced_date ;;
+    sql: ${TABLE}.LastReferencedDate ;;
   }
 
   dimension_group: last_viewed {
@@ -219,78 +219,78 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_viewed_date ;;
+    sql: ${TABLE}.LastViewedDate ;;
   }
 
   # dimension: lead_source {
   #   type: string
-  #   sql: ${TABLE}.lead_source ;;
+  #   sql: ${TABLE}.LeadSource ;;
   # }
 
   dimension: mailing_city {
     type: string
-    sql: ${TABLE}.mailing_city ;;
+    sql: ${TABLE}.MailingCity ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_country {
     type: string
-    sql: ${TABLE}.mailing_country ;;
+    sql: ${TABLE}.MailingCountry ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_geocode_accuracy {
     type: string
-    sql: ${TABLE}.mailing_geocode_accuracy ;;
+    sql: ${TABLE}.MailingGeocodeAccuracy ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_latitude {
     type: number
-    sql: ${TABLE}.mailing_latitude ;;
+    sql: ${TABLE}.MailingLatitude ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_longitude {
     type: number
-    sql: ${TABLE}.mailing_longitude ;;
+    sql: ${TABLE}.MailingLongitude ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_postal_code {
     type: string
-    sql: ${TABLE}.mailing_postal_code ;;
+    sql: ${TABLE}.MailingPostalCode ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_state {
     type: string
-    sql: ${TABLE}.mailing_state ;;
+    sql: ${TABLE}.MailingState ;;
     group_label: "Mailing Details"
   }
 
   dimension: mailing_street {
     type: string
-    sql: ${TABLE}.mailing_street ;;
+    sql: ${TABLE}.MailingStreet ;;
     group_label: "Mailing Details"
   }
 
   dimension: master_record_id {
     type: string
-    sql: ${TABLE}.master_record_id ;;
+    sql: ${TABLE}.MasterRecordId ;;
     hidden:  yes
   }
 
   dimension: mobile_phone {
     type: string
-    sql: ${TABLE}.mobile_phone ;;
+    sql: ${TABLE}.MobilePhone ;;
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.Name ;;
     html: <a href="mailto:{{ contact.email._value }}" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" width="16" height="16" />
+    <img src="https://outlook.office.com/mail/favicon.ico" width="16" height="16" />
     </a>
     {{ linked_value }}
     ;;
@@ -298,80 +298,80 @@ view: contact {
 
   dimension: other_city {
     type: string
-    sql: ${TABLE}.other_city ;;
+    sql: ${TABLE}.OtherCity ;;
   }
 
   dimension: id_url {
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     html: [<a href="https://{{ salesforce_domain_config._sql }}/{{ value }}">Open in SFDC</a>]
       ;;
   }
 
   dimension: other_country {
     type: string
-    sql: ${TABLE}.other_country ;;
+    sql: ${TABLE}.OtherCountry ;;
   }
 
   dimension: other_geocode_accuracy {
     type: string
-    sql: ${TABLE}.other_geocode_accuracy ;;
+    sql: ${TABLE}.OtherGeocodeAccuracy ;;
   }
 
   dimension: other_latitude {
     type: number
-    sql: ${TABLE}.other_latitude ;;
+    sql: ${TABLE}.OtherLatitude ;;
   }
 
   dimension: other_longitude {
     type: number
-    sql: ${TABLE}.other_longitude ;;
+    sql: ${TABLE}.OtherLongitude ;;
   }
 
   dimension: other_phone {
     type: string
-    sql: ${TABLE}.other_phone ;;
+    sql: ${TABLE}.OtherPhone ;;
   }
 
   dimension: other_postal_code {
     type: string
-    sql: ${TABLE}.other_postal_code ;;
+    sql: ${TABLE}.OtherPostalCode ;;
   }
 
   dimension: other_state {
     type: string
-    sql: ${TABLE}.other_state ;;
+    sql: ${TABLE}.OtherState ;;
   }
 
   dimension: other_street {
     type: string
-    sql: ${TABLE}.other_street ;;
+    sql: ${TABLE}.OtherStreet ;;
   }
 
   dimension: owner_id {
     type: string
-    sql: ${TABLE}.owner_id ;;
+    sql: ${TABLE}.OwnerId ;;
     hidden: yes
   }
 
   dimension: phone {
     type: string
-    sql: ${TABLE}.phone ;;
+    sql: ${TABLE}.Phone ;;
   }
 
   dimension: photo_url {
     type: string
-    sql: ${TABLE}.photo_url ;;
+    sql: ${TABLE}.PhotoUrl ;;
   }
 
   dimension: reports_to_id {
     type: string
-    sql: ${TABLE}.reports_to_id ;;
+    sql: ${TABLE}.ReportsToId ;;
     hidden: yes
   }
 
   dimension: salutation {
     type: string
-    sql: ${TABLE}.salutation ;;
+    sql: ${TABLE}.Salutation ;;
   }
 
   dimension_group: system_modstamp {
@@ -386,12 +386,12 @@ view: contact {
       quarter,
       year
     ]
-    sql: ${TABLE}.system_modstamp ;;
+    sql: ${TABLE}.SystemModstamp ;;
   }
 
   dimension: title {
     type: string
-    sql: ${TABLE}.title ;;
+    sql: ${TABLE}.Title ;;
   }
 
   measure: count {

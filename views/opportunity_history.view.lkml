@@ -1,14 +1,14 @@
 # view: opportunity_history {
-# #   sql_table_name: @{SCHEMA_NAME}.opportunity_history ;;
-#   sql_table_name: salesforce.user ;;
+# #   sql_table_name: @{SCHEMA_NAME}.sf_OpportunityHistory ;;
+#   sql_table_name: salesforce.sf_User ;;
 
 #   dimension: id {
 #     primary_key: yes
 #     type: string
-#     sql: ${TABLE}.id ;;
+#     sql: ${TABLE}.Id ;;
 #   }
 
-#   dimension_group: _fivetran_synced {
+#   dimension_group: _attrib_synced {
 #     hidden: yes
 #     type: time
 #     timeframes: [
@@ -20,13 +20,13 @@
 #       quarter,
 #       year
 #     ]
-#     sql: ${TABLE}._fivetran_synced ;;
+#     sql: ${TABLE}._attrib_synced ;;
 #   }
 
 #   dimension: amount {
 #     hidden: yes
 #     type: number
-#     sql: ${TABLE}.amount ;;
+#     sql: ${TABLE}.Amount ;;
 #   }
 
 #   dimension_group: close {
@@ -40,12 +40,12 @@
 #       quarter,
 #       year
 #     ]
-#     sql: ${TABLE}.close_date ;;
+#     sql: ${TABLE}.CloseDate ;;
 #   }
 
 #   dimension: created_by_id {
 #     type: string
-#     sql: ${TABLE}.created_by_id ;;
+#     sql: ${TABLE}.CreatedById ;;
 #   }
 
 #   dimension_group: created {
@@ -59,38 +59,38 @@
 #       quarter,
 #       year
 #     ]
-#     sql: ${TABLE}.created_date ;;
+#     sql: ${TABLE}.CreatedDate ;;
 #     label: "Snapshot"
 #   }
 
 #   dimension: expected_revenue {
 #     type: number
-#     sql: ${TABLE}.expected_revenue ;;
+#     sql: ${TABLE}.ExpectedRevenue ;;
 #   }
 
 #   dimension: forecast_category {
 #     type: string
-#     sql: ${TABLE}.forecast_category ;;
+#     sql: ${TABLE}.ForecastCategory ;;
 #   }
 
 #   dimension: is_deleted {
 #     type: yesno
-#     sql: ${TABLE}.is_deleted ;;
+#     sql: ${TABLE}.IsDeleted ;;
 #   }
 
 #   dimension: opportunity_id {
 #     type: string
-#     sql: ${TABLE}.opportunity_id ;;
+#     sql: ${TABLE}.OpportunityId ;;
 #   }
 
 #   dimension: probability {
 #     type: number
-#     sql: ${TABLE}.probability ;;
+#     sql: ${TABLE}.Probability ;;
 #   }
 
 #   dimension: stage_name {
 #     type: string
-#     sql: ${TABLE}.stage_name ;;
+#     sql: ${TABLE}.StageName ;;
 #   }
 
 #   dimension_group: system_modstamp {
@@ -105,7 +105,7 @@
 #       quarter,
 #       year
 #     ]
-#     sql: ${TABLE}.system_modstamp ;;
+#     sql: ${TABLE}.SystemModstamp ;;
 #   }
 
 # #   Measures:

@@ -1,5 +1,5 @@
 view: campaign {
-  sql_table_name: @{SALESFORCE_SCHEMA}.campaign ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_Campaign ;;
 
   dimension: id {
     primary_key: yes
@@ -8,7 +8,7 @@ view: campaign {
     hidden: yes
   }
 
-  dimension_group: _fivetran_synced {
+  dimension_group: _attrib_synced {
     type: time
     hidden: yes
     timeframes: [
@@ -20,42 +20,42 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}._fivetran_synced ;;
+    sql: ${TABLE}._attrib_synced ;;
   }
 
   dimension: actual_cost {
     type: number
-    sql: ${TABLE}.actual_cost ;;
+    sql: ${TABLE}.ActualCost ;;
     hidden: yes
   }
 
   dimension: amount_all_opportunities {
     type: number
-    sql: ${TABLE}.amount_all_opportunities ;;
+    sql: ${TABLE}.AmountAllOpportunities ;;
     hidden: yes
   }
 
   dimension: amount_won_opportunities {
     type: number
-    sql: ${TABLE}.amount_won_opportunities ;;
+    sql: ${TABLE}.AmountWonOpportunities ;;
     hidden: yes
   }
 
   dimension: budgeted_cost {
     type: number
-    sql: ${TABLE}.budgeted_cost ;;
+    sql: ${TABLE}.BudgetedCost ;;
     hidden: yes
   }
 
   dimension: campaign_member_record_type_id {
     type: string
-    sql: ${TABLE}.campaign_member_record_type_id ;;
+    sql: ${TABLE}.CampaignMemberRecordTypeId ;;
     hidden: yes
   }
 
   dimension: created_by_id {
     type: string
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
     hidden: yes
   }
 
@@ -70,12 +70,12 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
   dimension: description {
     type: string
-    sql: ${TABLE}.description ;;
+    sql: ${TABLE}.Description ;;
   }
 
   dimension_group: end {
@@ -89,29 +89,29 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.end_date ;;
+    sql: ${TABLE}.EndDate ;;
   }
 
   dimension: expected_response {
     type: number
-    sql: ${TABLE}.expected_response ;;
+    sql: ${TABLE}.ExpectedResponse ;;
     hidden: yes
   }
 
   dimension: expected_revenue {
     type: number
-    sql: ${TABLE}.expected_revenue ;;
+    sql: ${TABLE}.ExpectedRevenue ;;
     hidden: yes
   }
 
   dimension: is_active {
     type: yesno
-    sql: ${TABLE}.is_active ;;
+    sql: ${TABLE}.IsActive ;;
   }
 
   dimension: is_deleted {
     type: yesno
-    sql: ${TABLE}.is_deleted ;;
+    sql: ${TABLE}.IsDeleted ;;
   }
 
   dimension_group: last_activity {
@@ -126,7 +126,7 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_activity_date ;;
+    sql: ${TABLE}.LastActivityDate ;;
   }
 
   dimension_group: last_modified {
@@ -141,7 +141,7 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension_group: last_referenced {
@@ -156,7 +156,7 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_referenced_date ;;
+    sql: ${TABLE}.LastReferencedDate ;;
   }
 
   dimension_group: last_viewed {
@@ -171,12 +171,12 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_viewed_date ;;
+    sql: ${TABLE}.LastViewedDate ;;
   }
 
   dimension: name {
     type: string
-    sql: ${TABLE}.name ;;
+    sql: ${TABLE}.Name ;;
     html: <a href="https://{{ salesforce_domain_config._sql }}/{{ campaign.id._value }}" target="_new">
           <img src="https://www.google.com/s2/favicons?domain=www.salesforce.com" height=16 width=16></a>
           {{ linked_value }};;
@@ -184,50 +184,50 @@ view: campaign {
 
   dimension: number_of_contacts {
     type: number
-    sql: ${TABLE}.number_of_contacts ;;
+    sql: ${TABLE}.NumberOfContacts ;;
     hidden: yes
   }
 
   dimension: number_of_converted_leads {
     type: number
-    sql: ${TABLE}.number_of_converted_leads ;;
+    sql: ${TABLE}.NumberOfConvertedLeads ;;
     hidden: yes
   }
 
   dimension: number_of_leads {
     type: number
-    sql: ${TABLE}.number_of_leads ;;
+    sql: ${TABLE}.NumberOfLeads ;;
     hidden:  yes
   }
 
   dimension: number_of_opportunities {
     type: number
-    sql: ${TABLE}.number_of_opportunities ;;
+    sql: ${TABLE}.NumberOfOpportunities ;;
     hidden: yes
   }
 
   dimension: number_of_responses {
     type: number
-    sql: ${TABLE}.number_of_responses ;;
+    sql: ${TABLE}.NumberOfResponses ;;
     hidden: yes
   }
 
   dimension: number_of_won_opportunities {
     type: number
-    sql: ${TABLE}.number_of_won_opportunities ;;
+    sql: ${TABLE}.NumberOfWonOpportunities ;;
     hidden: yes
   }
 
   dimension: number_sent {
     type: number
-    sql: ${TABLE}.number_sent ;;
+    sql: ${TABLE}.NumberSent ;;
     hidden: yes
   }
 
   dimension: parent_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.parent_id ;;
+    sql: ${TABLE}.ParentId ;;
   }
 
   dimension_group: start {
@@ -241,12 +241,12 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.start_date ;;
+    sql: ${TABLE}.StartDate ;;
   }
 
   dimension: status {
     type: string
-    sql: ${TABLE}.status ;;
+    sql: ${TABLE}.Status ;;
   }
 
   dimension_group: system_modstamp {
@@ -261,12 +261,12 @@ view: campaign {
       quarter,
       year
     ]
-    sql: ${TABLE}.system_modstamp ;;
+    sql: ${TABLE}.SystemModstamp ;;
   }
 
   dimension: type {
     type: string
-    sql: ${TABLE}.type ;;
+    sql: ${TABLE}.Type ;;
   }
 
   measure: count {
@@ -314,12 +314,12 @@ view: campaign {
   dimension: owner_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.owner_id ;;
+    sql: ${TABLE}.OwnerId ;;
   }
 
   dimension: last_modified_by_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
   }
 }

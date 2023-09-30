@@ -1,15 +1,15 @@
 
 view: task {
-  sql_table_name: @{SALESFORCE_SCHEMA}.task ;;
+  sql_table_name: @{SALESFORCE_SCHEMA}.sf_Task ;;
 
   dimension: id {
     primary_key: yes
     type: string
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.Id ;;
     hidden: yes
   }
 
-  dimension_group: _fivetran_synced {
+  dimension_group: _attrib_synced {
     type: time
     hidden: yes
     timeframes: [
@@ -21,13 +21,13 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}._fivetran_synced ;;
+    sql: ${TABLE}._attrib_synced ;;
   }
 
   dimension: account_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.account_id ;;
+    sql: ${TABLE}.AccountId ;;
   }
 
   dimension_group: activity {
@@ -42,36 +42,36 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.activity_date ;;
+    sql: ${TABLE}.ActivityDate ;;
   }
 
   dimension: call_disposition {
     type: string
     hidden: yes
-    sql: ${TABLE}.call_disposition ;;
+    sql: ${TABLE}.CallDisposition ;;
   }
 
   dimension: call_duration_in_seconds {
     type: number
     hidden: yes
-    sql: ${TABLE}.call_duration_in_seconds ;;
+    sql: ${TABLE}.CallDurationInSeconds ;;
   }
 
   dimension: call_object {
     type: string
     hidden: yes
-    sql: ${TABLE}.call_object ;;
+    sql: ${TABLE}.CallObject ;;
   }
 
   dimension: call_type {
     type: string
-    sql: ${TABLE}.call_type ;;
+    sql: ${TABLE}.CallType ;;
   }
 
   dimension: created_by_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.created_by_id ;;
+    sql: ${TABLE}.CreatedById ;;
   }
 
   dimension_group: created {
@@ -85,50 +85,50 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.created_date ;;
+    sql: ${TABLE}.CreatedDate ;;
   }
 
   dimension: currency_iso_code {
     type: string
     hidden: yes
-    sql: ${TABLE}.currency_iso_code ;;
+    sql: ${TABLE}.CurrencyIsoCode ;;
   }
 
   dimension: description {
     type: string
-    sql: CONCAT(SUBSTR(${TABLE}.description,0,130), "...") ;;
+    sql: CONCAT(SUBSTR(${TABLE}.Description,0,130), "...") ;;
   }
 
   dimension: is_closed {
     type: yesno
-    sql: ${TABLE}.is_closed ;;
+    sql: ${TABLE}.IsClosed ;;
   }
 
   dimension: is_deleted {
     type: yesno
-    sql: ${TABLE}.is_deleted ;;
+    sql: ${TABLE}.IsDeleted ;;
   }
 
   dimension: is_high_priority {
     type: yesno
-    sql: ${TABLE}.is_high_priority ;;
+    sql: ${TABLE}.IsHighPriority ;;
   }
 
   dimension: is_recurrence {
     type: yesno
-    sql: ${TABLE}.is_recurrence ;;
+    sql: ${TABLE}.IsRecurrence ;;
   }
 
   dimension: is_reminder_set {
     type: yesno
     hidden: yes
-    sql: ${TABLE}.is_reminder_set ;;
+    sql: ${TABLE}.IsReminderSet ;;
   }
 
   dimension: last_modified_by_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.last_modified_by_id ;;
+    sql: ${TABLE}.LastModifiedById ;;
   }
 
   dimension_group: last_modified {
@@ -143,36 +143,36 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.last_modified_date ;;
+    sql: ${TABLE}.LastModifiedDate ;;
   }
 
   dimension: priority {
     type: string
-    sql: ${TABLE}.priority ;;
+    sql: ${TABLE}.Priority ;;
   }
 
   dimension: record_type_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.record_type_id ;;
+    sql: ${TABLE}.RecordTypeId ;;
   }
 
   dimension: recurrence_activity_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_activity_id ;;
+    sql: ${TABLE}.RecurrenceActivityId ;;
   }
 
   dimension: recurrence_day_of_month {
     type: number
     hidden: yes
-    sql: ${TABLE}.recurrence_day_of_month ;;
+    sql: ${TABLE}.RecurrenceDayOfMonth ;;
   }
 
   dimension: recurrence_day_of_week_mask {
     type: number
     hidden: yes
-    sql: ${TABLE}.recurrence_day_of_week_mask ;;
+    sql: ${TABLE}.RecurrenceDayOfWeekMask ;;
   }
 
   dimension_group: recurrence_end_date_only {
@@ -187,31 +187,31 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.recurrence_end_date_only ;;
+    sql: ${TABLE}.RecurrenceEndDateOnly ;;
   }
 
   dimension: recurrence_instance {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_instance ;;
+    sql: ${TABLE}.RecurrenceInstance ;;
   }
 
   dimension: recurrence_interval {
     type: number
     hidden: yes
-    sql: ${TABLE}.recurrence_interval ;;
+    sql: ${TABLE}.RecurrenceInterval ;;
   }
 
   dimension: recurrence_month_of_year {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_month_of_year ;;
+    sql: ${TABLE}.RecurrenceMonthOfYear ;;
   }
 
   dimension: recurrence_regenerated_type {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_regenerated_type ;;
+    sql: ${TABLE}.RecurrenceRegeneratedType ;;
   }
 
   dimension_group: recurrence_start_date_only {
@@ -226,19 +226,19 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.recurrence_start_date_only ;;
+    sql: ${TABLE}.RecurrenceStartDateOnly ;;
   }
 
   dimension: recurrence_time_zone_sid_key {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_time_zone_sid_key ;;
+    sql: ${TABLE}.RecurrenceTimeZoneSidKey ;;
   }
 
   dimension: recurrence_type {
     type: string
     hidden: yes
-    sql: ${TABLE}.recurrence_type ;;
+    sql: ${TABLE}.RecurrenceType ;;
   }
 
   dimension_group: reminder_date {
@@ -253,17 +253,17 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.reminder_date_time ;;
+    sql: ${TABLE}.ReminderDateTime ;;
   }
 
   dimension: status {
     type: string
-    sql: ${TABLE}.status ;;
+    sql: ${TABLE}.Status ;;
   }
 
   dimension: subject {
     type: string
-    sql: ${TABLE}.subject ;;
+    sql: ${TABLE}.Subject ;;
   }
 
   dimension_group: system_modstamp {
@@ -278,30 +278,30 @@ view: task {
       quarter,
       year
     ]
-    sql: ${TABLE}.system_modstamp ;;
+    sql: ${TABLE}.SystemModstamp ;;
   }
 
   dimension: task_subtype {
     type: string
     hidden: yes
-    sql: ${TABLE}.task_subtype ;;
+    sql: ${TABLE}.TaskSubtype ;;
   }
 
   dimension: type {
     type: string
-    sql: ${TABLE}.type ;;
+    sql: ${TABLE}.Type ;;
   }
 
   dimension: what_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.what_id ;;
+    sql: ${TABLE}.WhatId ;;
   }
 
   dimension: who_id {
     type: string
     hidden: yes
-    sql: ${TABLE}.who_id ;;
+    sql: ${TABLE}.WhoId ;;
   }
 
   measure: count {

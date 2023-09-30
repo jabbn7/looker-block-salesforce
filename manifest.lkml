@@ -1,4 +1,4 @@
-project_name: "block-sales_v2"
+project_name: "salesforce-insights-v1"
 
 
 constant: CONNECTION_NAME {
@@ -7,11 +7,11 @@ constant: CONNECTION_NAME {
 }
 
 constant: SALESFORCE_SCHEMA {
-  value: "descent-196820.marketplace_project_test_data"
+  value: "ftc-cdp.raw_landing"
   export: override_optional
 }
 
 constant: SALESFORCE_DOMAIN {
-  value: "salesforce"
+  value: "freshtracks.my.salesforce.com"
   export: override_optional
 }
